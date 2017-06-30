@@ -1,0 +1,15 @@
+Package: fcuk
+Type: Package
+Title: The Error Helper
+Version: 0.1.0
+Author: Vincent Guyader
+Maintainer: Vincent Guyader <vincent@thinkr.fr>
+Description: Try to explain the errors.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: stringdist
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

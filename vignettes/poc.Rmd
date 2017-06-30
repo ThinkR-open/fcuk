@@ -1,0 +1,96 @@
+---
+title: "POC"
+author: "vincent Guyader"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{POC}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r}
+library(fcuk)
+
+error_analysis("view()")
+```
+
+```{r}
+error_analysis("sl()")
+```
+
+
+I would like to launch this fonction automaticaly for each error.
+But the TaskCallback isn't activated with error :
+
+```{r}
+
+addTaskCallback(
+  function(expr, value, ok, visible) {
+print("ok")
+    TRUE
+  }
+)
+getTaskCallbackNames()
+
+print(1) #ok 
+ls() #ok
+#dont_exist()# the taskcallback isnt activated
+removeTaskCallback("1")
+```
+
+
+We find this instruction to run this function for each error
+
+```{r}
+.Internal(.addCondHands("error",
+                        list(
+                          error = function(e) {
+                            fcuk::error_analysis(e$call)
+                          }
+                        ),
+                        .GlobalEnv, NULL,TRUE))
+```
+
+But only the first `error` is captured
+
+```{r}
+ls()  # OK
+
+#sl()
+
+# > You ask :sl()
+# 
+# > Maybe you mean : ls or nls ? 
+# > Error in sl() : could not find function "sl"
+
+
+# sl() # just the error
+#view() # just the error
+```
+
+
+I tried to put the instruction inside a function, to call it again in the `error_analysis` function, but it doesnt work
+
+```{r}
+init_error<-function(){
+  .Internal(.addCondHands("error",
+                        list(
+                          error = function(e) {
+                            fcuk::error_analysis(e$call)
+                          }
+                        ),
+                        .GlobalEnv, NULL,TRUE))
+}
+init_error()
+
+#sl()  #just the error
+#view()#just the error
+```
+
+
+Do you have any idea ?
+
+Regards
+
