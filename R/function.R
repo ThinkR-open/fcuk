@@ -32,7 +32,7 @@ erreur_correction_propostion <- function(car,method="jaccard"){
 #'
 #' @export
 #'
-error_analysis <- function(error) {
+error_analysis <- function(error=catch_error()) {
 
   message(gettext("You ask :"), deparse(error), "\n")
   cat(gettext("Maybe you mean :"),
@@ -41,3 +41,25 @@ error_analysis <- function(error) {
       )
       ,"?\n")
 }
+
+
+#' Title
+#'
+#' @param sentense 
+#'
+#' @return
+#' @export
+#' @import stringr
+catch_error <- function(sentence = geterrmessage()){
+  
+  t1 <- strapplyc(sentence, ".*'(.*)' not found",simplify = TRUE)
+  t2 <- strapplyc(sentence, "could not find function \"(.*)\"",simplify = TRUE)
+
+  p <- c(t1,t2)
+# lapply(p,class)
+# p[sapply(p,length)==1]
+#  length(t1) 
+#  class(t2)   
+unlist(p)[1]
+ 
+ }

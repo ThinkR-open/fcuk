@@ -4,7 +4,7 @@
 \alias{error_analysis}
 \title{Error Analysis}
 \usage{
-error_analysis(error)
+error_analysis(error = catch_error())
 }
 \arguments{
 \item{error}{error to check}
