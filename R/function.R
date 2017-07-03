@@ -6,8 +6,10 @@
 #'
 #' @examples
 #' get_all_objets_from_r()
-get_all_objets_from_r <- function(...){
-  unname(unlist(sapply(search(),function(x){ls(x)})))
+get_all_objets_from_r <- function(...) {
+  unname(unlist(sapply(search(), function(x) {
+    ls(x)
+  })))
 }
 
 #' Find closest R functions
@@ -18,9 +20,9 @@ get_all_objets_from_r <- function(...){
 #' @export
 #' @import stringdist
 
-erreur_correction_propostion <- function(car,method="jaccard"){
+erreur_correction_propostion <- function(car, method = "jaccard") {
   candidats <- get_all_objets_from_r()
-  candidats[order(stringdist(tolower(car),tolower(candidats),method = method))][1:2]
+  candidats[order(stringdist(tolower(car), tolower(candidats), method = method))][1:2]
 }
 
 
@@ -32,34 +34,31 @@ erreur_correction_propostion <- function(car,method="jaccard"){
 #'
 #' @export
 #'
-error_analysis <- function(error=catch_error()) {
-
-  message(gettext("You ask :"), deparse(error), "\n")
-  cat(gettext("Maybe you mean :"),
+error_analysis <- function(error = catch_error()) {
+  if (!is.na(error)) {
+    message(gettext("You ask :"), deparse(error), "\n")
+    cat(
+      gettext("Maybe you mean :"),
       paste(
-      erreur_correction_propostion(as.character(error)[1]),collapse=gettext(" or ")
+        erreur_correction_propostion(as.character(error)[1]),
+        collapse = gettext(" or ")
       )
-      ,"?\n")
+      ,
+      "?\n"
+    )
+  }
 }
 
 
 #' Title
 #'
-#' @param sentense 
+#' @param sentense
 #'
-#' @return
 #' @export
-#' @importFrom gsubfn strapplyc
-catch_error <- function(sentence = geterrmessage()){
+catch_error <- function(sentence = geterrmessage()) {
+  a1 <- sub(".*'(.*)' not found.*", "\\1", sentence)
+  a2 <- sub(".*could not find function \"(.*)\"\n", "\\1", sentence)
+  res <- c(a1, a2)
+  res[res != sentence][1]
   
-  t1 <- strapplyc(sentence, ".*'(.*)' not found",simplify = TRUE)
-  t2 <- strapplyc(sentence, "could not find function \"(.*)\"",simplify = TRUE)
-
-  p <- c(t1,t2)
-# lapply(p,class)
-# p[sapply(p,length)==1]
-#  length(t1) 
-#  class(t2)   
-unlist(p)[1]
- 
- }
+}
