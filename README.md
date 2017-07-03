@@ -1,6 +1,6 @@
 # fcuk
 
-Because sometimes...
+Because sometimes we make mistake.
 
 ## Installation
 
@@ -8,7 +8,7 @@ Because sometimes...
 
 ```R
 if (!require(devtools)){install.packages("devtools")}
-devtools::install_github("ThinkRstat/fcuk",build_vignettes = TRUE)
+devtools::install_github("ThinkRstat/fcuk")
 library(fcuk)
 sl()
 iri
