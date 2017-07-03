@@ -8,7 +8,7 @@ Because sometimes...
 
 ```R
 if (!require(devtools)){install.packages("devtools")}
-devtools::install_github("ThinkRstat/fcuk",build_vignettes = TRUE))
+devtools::install_github("ThinkRstat/fcuk",build_vignettes = TRUE)
 library(fcuk)
 sl()
 iri
