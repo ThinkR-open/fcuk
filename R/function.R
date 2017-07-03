@@ -50,7 +50,7 @@ error_analysis <- function(error = catch_error()) {
 }
 
 
-#' Title
+#' capture and parse the last error
 #'
 #' @param sentense
 #'
