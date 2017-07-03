@@ -3,6 +3,6 @@
   fcuk::init_error_tracker()
 }
 #' @noRd
-.onDetach <- function(libname, pkgname) {
+.onDetach <- function(libname) {
   fcuk::remove_error_tracker()
 }

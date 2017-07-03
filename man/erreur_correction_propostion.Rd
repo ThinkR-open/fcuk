@@ -4,13 +4,18 @@
 \alias{erreur_correction_propostion}
 \title{Find closest R functions}
 \usage{
-erreur_correction_propostion(car, method = "jaccard")
+erreur_correction_propostion(asked_objet, method = "jaccard", n = 2)
 }
 \arguments{
-\item{car}{error to check}
+\item{asked_objet}{the R object name producing an error}
 
 \item{method}{Method for distance calculation. The default is "jaccard", see \link[stringdist]{stringdist-metrics}.}
+
+\item{n}{number of corrections to propose}
 }
 \description{
 Find closest R functions
+}
+\examples{
+erreur_correction_propostion("iri")
 }

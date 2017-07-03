@@ -14,15 +14,18 @@ get_all_objets_from_r <- function(...) {
 
 #' Find closest R functions
 #'
-#' @param car error to check
+#' @param asked_objet the R object name producing an error
 #' @param method Method for distance calculation. The default is "jaccard", see \link[stringdist]{stringdist-metrics}.
+#' @param n number of corrections to propose
 #'
 #' @export
 #' @import stringdist
+#' @examples 
+#' erreur_correction_propostion("iri")
 
-erreur_correction_propostion <- function(car, method = "jaccard") {
+erreur_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
   candidats <- get_all_objets_from_r()
-  candidats[order(stringdist(tolower(car), tolower(candidats), method = method))][1:2]
+  candidats[order(stringdist(tolower(asked_objet), tolower(candidats), method = method))][seq_len(n)]
 }
 
 
@@ -30,17 +33,21 @@ erreur_correction_propostion <- function(car, method = "jaccard") {
 
 #' Error Analysis
 #'
-#' @param error error to check
+#' @param asked_objet the R object name producing an error
+#' @param n number of corrections to propose
 #'
 #' @export
-#'
-error_analysis <- function(error = catch_error()) {
-  if (!is.na(error)) {
-    # message(gettext("You ask :"), deparse(error), "\n")
+#' @examples 
+#' fcuk::error_analysis() #last error is analysed
+#' fcuk::error_analysis("view")
+#' fcuk::error_analysis("iri")
+error_analysis <- function(asked_objet = catch_error(),n=2) {
+  if (!is.na(asked_objet)) {
+    # message(gettext("You ask :"), deparse(asked_objet), "\n")
     cat(
       gettext("Maybe you mean :"),
       paste(
-        erreur_correction_propostion(as.character(error)[1]),
+        erreur_correction_propostion(as.character(asked_objet)[1],n=n),
         collapse = gettext(" or ")
       )
       ,
@@ -52,26 +59,36 @@ error_analysis <- function(error = catch_error()) {
 
 #' capture and parse the last error
 #'
-#' @param sentense
-#'
+#' @param sentence an error message to parse
 #' @export
+#' @examples 
+#' catch_error()
+#' catch_error("Error: object 'iri' not found\n")
+#' catch_error("Error: object 'view' not found\n")
 catch_error <- function(sentence = geterrmessage()) {
   a1 <- sub(".*'(.*)' not found.*", "\\1", sentence)
   a2 <- sub(".*could not find function \"(.*)\"\n", "\\1", sentence)
   res <- c(a1, a2)
   res[res != sentence][1]
-  
 }
 
 #' init error tracker
+#' 
+#' every errors will be analysed
 #'
 #' @export
-#'
+#' @examples 
+#' getOption("error")
+#' fcuk::init_error_tracker()
+#' getOption("error")
 init_error_tracker <- function(){
   
   options("old_error" = getOption("error"))
     options( error = function(...){ 
-       error_analysis() }  )
+       error_analysis()
+      # .rs.breakOnError(TRUE)
+      
+      }  )
   }
 
 
@@ -79,9 +96,10 @@ init_error_tracker <- function(){
 #' Remove error tracker
 #'
 #' @export
-#'
+#' @examples 
+#' getOption("error")
+#' fcuk::remove_error_tracker()
+#' getOption("error")
 remove_error_tracker <- function() {
-
   options("error" = getOption("old_error"))
-  
 }

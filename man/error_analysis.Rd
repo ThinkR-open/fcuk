@@ -4,11 +4,18 @@
 \alias{error_analysis}
 \title{Error Analysis}
 \usage{
-error_analysis(error = catch_error())
+error_analysis(asked_objet = catch_error(), n = 2)
 }
 \arguments{
-\item{error}{error to check}
+\item{asked_objet}{the R object name producing an error}
+
+\item{n}{number of corrections to propose}
 }
 \description{
 Error Analysis
+}
+\examples{
+fcuk::error_analysis() #last error is analysed
+fcuk::error_analysis("view")
+fcuk::error_analysis("iri")
 }

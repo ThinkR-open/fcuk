@@ -7,8 +7,12 @@
 catch_error(sentence = geterrmessage())
 }
 \arguments{
-\item{sentense}{}
+\item{sentence}{an error message to parse}
 }
 \description{
 capture and parse the last error
+}
+\examples{
+catch_error()
+catch_error("Error: object 'iri' not found\\n")
 }

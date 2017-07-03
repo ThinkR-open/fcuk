@@ -1,10 +1,10 @@
 Package: fcuk
 Type: Package
 Title: The Error Helper
-Version: 0.1.0
+Version: 0.1.1
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-Description: Try to explain the errors.
+Description: Automaticly correct errors and typo you can make.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

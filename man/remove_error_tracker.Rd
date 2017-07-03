@@ -9,3 +9,8 @@ remove_error_tracker()
 \description{
 Remove error tracker
 }
+\examples{
+getOption("error")
+fcuk::remove_error_tracker()
+getOption("error")
+}
