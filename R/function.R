@@ -62,3 +62,16 @@ catch_error <- function(sentence = geterrmessage()) {
   res[res != sentence][1]
   
 }
+
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
+init_error_tracker <- function(){
+  
+  options( error = function(...){ 
+    error_analysis() }  )
+  
+}

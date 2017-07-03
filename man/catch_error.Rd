@@ -2,7 +2,7 @@
 % Please edit documentation in R/function.R
 \name{catch_error}
 \alias{catch_error}
-\title{Title}
+\title{capture and parse the last error}
 \usage{
 catch_error(sentence = geterrmessage())
 }
@@ -10,5 +10,5 @@ catch_error(sentence = geterrmessage())
 \item{sentense}{}
 }
 \description{
-Title
+capture and parse the last error
 }
