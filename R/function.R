@@ -49,7 +49,7 @@ error_analysis <- function(error=catch_error()) {
 #'
 #' @return
 #' @export
-#' @import stringr
+#' @importFrom gsubfn strapplyc
 catch_error <- function(sentence = geterrmessage()){
   
   t1 <- strapplyc(sentence, ".*'(.*)' not found",simplify = TRUE)
