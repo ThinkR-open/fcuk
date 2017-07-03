@@ -36,7 +36,7 @@ erreur_correction_propostion <- function(car, method = "jaccard") {
 #'
 error_analysis <- function(error = catch_error()) {
   if (!is.na(error)) {
-    message(gettext("You ask :"), deparse(error), "\n")
+    # message(gettext("You ask :"), deparse(error), "\n")
     cat(
       gettext("Maybe you mean :"),
       paste(
@@ -63,13 +63,25 @@ catch_error <- function(sentence = geterrmessage()) {
   
 }
 
-#' Title
+#' init error tracker
 #'
-#' @return
 #' @export
 #'
-#' @examples
 init_error_tracker <- function(){
+  
+  options("old_error" = getOption("error"))
     options( error = function(...){ 
        error_analysis() }  )
   }
+
+
+
+#' Remove error tracker
+#'
+#' @export
+#'
+remove_error_tracker <- function() {
+
+  options("error" = getOption("old_error"))
+  
+}
