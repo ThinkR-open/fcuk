@@ -2,12 +2,12 @@
 % Please edit documentation in R/function.R
 \name{init_error_tracker}
 \alias{init_error_tracker}
-\title{init error tracker}
+\title{Init error tracker}
 \usage{
 init_error_tracker()
 }
 \description{
-every errors will be analysed
+each error message will be analysed
 }
 \examples{
 getOption("error")

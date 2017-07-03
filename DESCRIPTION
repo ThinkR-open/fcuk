@@ -4,7 +4,7 @@ Title: The Error Helper
 Version: 0.1.1
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-Description: Automaticly correct errors and typo you can make.
+Description: Automatically correct errors and typos you can make.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -13,4 +13,3 @@ Imports: stringdist,
     gsubfn
 Suggests: knitr,
     rmarkdown
-VignetteBuilder: knitr

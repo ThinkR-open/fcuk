@@ -2,7 +2,7 @@
 % Please edit documentation in R/function.R
 \name{get_all_objets_from_r}
 \alias{get_all_objets_from_r}
-\title{extract all object from r}
+\title{Extract all loaded objects names from R environments}
 \usage{
 get_all_objets_from_r(...)
 }
@@ -10,7 +10,7 @@ get_all_objets_from_r(...)
 \item{...}{not used}
 }
 \description{
-fetch all r loaded objects
+fetch all R loaded objects names (functions, values, data...)
 }
 \examples{
 get_all_objets_from_r()

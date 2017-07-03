@@ -2,7 +2,7 @@
 % Please edit documentation in R/function.R
 \name{catch_error}
 \alias{catch_error}
-\title{capture and parse the last error}
+\title{Capture and parse the last error}
 \usage{
 catch_error(sentence = geterrmessage())
 }
@@ -10,9 +10,10 @@ catch_error(sentence = geterrmessage())
 \item{sentence}{an error message to parse}
 }
 \description{
-capture and parse the last error
+Capture and parse the last error
 }
 \examples{
 catch_error()
 catch_error("Error: object 'iri' not found\\n")
+catch_error("Error: object 'view' not found\\n")
 }

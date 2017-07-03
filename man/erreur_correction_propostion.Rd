@@ -2,7 +2,7 @@
 % Please edit documentation in R/function.R
 \name{erreur_correction_propostion}
 \alias{erreur_correction_propostion}
-\title{Find closest R functions}
+\title{Find closest R functions names}
 \usage{
 erreur_correction_propostion(asked_objet, method = "jaccard", n = 2)
 }
@@ -11,10 +11,10 @@ erreur_correction_propostion(asked_objet, method = "jaccard", n = 2)
 
 \item{method}{Method for distance calculation. The default is "jaccard", see \link[stringdist]{stringdist-metrics}.}
 
-\item{n}{number of corrections to propose}
+\item{n}{number of names corrections to suggest}
 }
 \description{
-Find closest R functions
+Find closest R functions names
 }
 \examples{
 erreur_correction_propostion("iri")

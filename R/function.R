@@ -1,6 +1,6 @@
-#' extract all object from r
+#' Extract all loaded objects names from R environments 
 #'
-#' fetch all r loaded objects
+#' fetch all R loaded objects names (functions, values, data...)
 #' @param ... not used
 #' @export
 #'
@@ -12,11 +12,11 @@ get_all_objets_from_r <- function(...) {
   })))
 }
 
-#' Find closest R functions
+#' Find closest R functions names
 #'
 #' @param asked_objet the R object name producing an error
 #' @param method Method for distance calculation. The default is "jaccard", see \link[stringdist]{stringdist-metrics}.
-#' @param n number of corrections to propose
+#' @param n number of names corrections to suggest
 #'
 #' @export
 #' @import stringdist
@@ -34,7 +34,7 @@ erreur_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
 #' Error Analysis
 #'
 #' @param asked_objet the R object name producing an error
-#' @param n number of corrections to propose
+#' @param n number of corrections to suggest
 #'
 #' @export
 #' @examples 
@@ -57,7 +57,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 }
 
 
-#' capture and parse the last error
+#' Capture and parse the last error
 #'
 #' @param sentence an error message to parse
 #' @export
@@ -72,9 +72,9 @@ catch_error <- function(sentence = geterrmessage()) {
   res[res != sentence][1]
 }
 
-#' init error tracker
+#' Init error tracker
 #' 
-#' every errors will be analysed
+#' each error message will be analysed
 #'
 #' @export
 #' @examples 

@@ -9,7 +9,7 @@ error_analysis(asked_objet = catch_error(), n = 2)
 \arguments{
 \item{asked_objet}{the R object name producing an error}
 
-\item{n}{number of corrections to propose}
+\item{n}{number of corrections to suggest}
 }
 \description{
 Error Analysis
