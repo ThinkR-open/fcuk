@@ -70,8 +70,6 @@ catch_error <- function(sentence = geterrmessage()) {
 #'
 #' @examples
 init_error_tracker <- function(){
-  
-  options( error = function(...){ 
-    error_analysis() }  )
-  
-}
+    options( error = function(...){ 
+       error_analysis() }  )
+  }
