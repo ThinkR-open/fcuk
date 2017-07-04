@@ -62,6 +62,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 #' Capture and parse the last error
 #'
 #' @param sentence an error message to parse
+#' @importFrom purrr map_chr
 #' @export
 #' @examples 
 #' catch_error()
@@ -69,10 +70,6 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 #' catch_error("Error: object 'view' not found\n")
 #' 
 #' 
-
-
-
-
 catch_error <- function(sentence = geterrmessage()) {
   regex_rules() %>% 
     map_chr(~sub(.x,"\\1",sentence)) %>%
@@ -126,12 +123,12 @@ regex_rules <- function(){
       ".*impossible de trouver la fonction \"(.*)\"\n",
     "Error in sl() : konnte Funktion \"sl\" nicht finden\n" = 
       ".*konnte Funktion \"(.*)\" nicht finden\n",
-    "Error in sl() : não foi possível encontrar a função \"sl\"\n" = 
-      ".*não foi possível encontrar a função \"(.*)\"\n",
+    "Error in sl() : n\u00E3o foi poss\u00EDvel encontrar a fun\u00E7\u00E3o \"sl\"\n" = 
+      ".*n\u00E3o foi poss\u00EDvel encontrar a fun\u00E7\u00E3o \"(.*)\"\n",
     "Error in sl() : nie udalo sie znalezc funkcji 'sl'\n" =
       ".*nie udalo sie znalezc funkcji '(.*)'\n",
-    "Error in sl() : no se pudo encontrar la función \"sl\"\n" =
-      ".*no se pudo encontrar la función \"(.*)\"\n",
+    "Error in sl() : no se pudo encontrar la funci\u00F3n \"sl\"\n" =
+      ".*no se pudo encontrar la funci\u00F3n \"(.*)\"\n",
     "Error in sl() : non trovo la funzione \"sl\"\n" =
       ".*non trovo la funzione \"(.*)\"\n",
     "Error in try(iri) : 'iri' nesnesi bulunamadi\n" = 
@@ -150,8 +147,8 @@ regex_rules <- function(){
       ".*'(.*)' nicht gefunden.*",
     "Error in try(iri) : objet 'iri' introuvable\n" =
       ".*'(.*)' introuvable.*",
-    "Error in try(iri) : objeto 'iri' não encontrado\n" = 
-      ".*'(.*)' não encontrado.*",
+    "Error in try(iri) : objeto 'iri' n\u00E3o encontrado\n" = 
+      ".*'(.*)' n\u00E3o encontrado.*",
     "Error in try(iri) : objeto 'iri' no encontrado\n" = 
       ".*'(.*)' no encontrado.*",
     "Error in try(iri) : oggetto \"iri\" non trovato\n" =
