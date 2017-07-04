@@ -3,13 +3,15 @@
 #' fetch all R loaded objects names (functions, values, data...)
 #' @param ... not used
 #' @export
-#'
+#' @importFrom purrr map 
+#' @importFrom magrittr %>% 
 #' @examples
 #' get_all_objets_from_r()
 get_all_objets_from_r <- function(...) {
-  unname(unlist(sapply(search(), function(x) {
-    ls(x)
-  })))
+  search() %>% 
+    purrr::map(~ls(.x)) %>% 
+    unlist %>%
+    unname()
 }
 
 #' Find closest R functions names
