@@ -3,15 +3,14 @@
 #' fetch all R loaded objects names (functions, values, data...)
 #' @param ... not used
 #' @export
-#' @importFrom purrr map 
+#' @importFrom purrr map flatten_chr
 #' @importFrom magrittr %>% 
 #' @examples
 #' get_all_objets_from_r()
 get_all_objets_from_r <- function(...) {
   search() %>% 
     purrr::map(~ls(.x)) %>% 
-    unlist %>%
-    unname()
+    flatten_chr()
 }
 
 #' Find closest R functions names
