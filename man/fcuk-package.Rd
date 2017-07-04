@@ -6,7 +6,7 @@
 \alias{fcuk}
 \title{fcuk}
 \description{
-Automaticly correct errors and typo you can make.
+Automatically suggest errors and typos corrections.
 }
 \author{
 vincent <vincent@thinkr.fr>

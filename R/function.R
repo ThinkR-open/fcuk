@@ -43,7 +43,8 @@ erreur_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
 #' fcuk::error_analysis("view")
 #' fcuk::error_analysis("iri")
 error_analysis <- function(asked_objet = catch_error(),n=2) {
-  if (!is.na(asked_objet)) {
+
+    if (length(asked_objet)>0 && !is.na(asked_objet)) {
     # message(gettext("You ask :"), deparse(asked_objet), "\n")
     cat(
       gettext("Did you mean :"),
@@ -151,7 +152,13 @@ regex_rules <- function(){
     "Error in try(iri) : objeto 'iri' no encontrado\n" = 
       ".*'(.*)' no encontrado.*",
     "Error in try(iri) : oggetto \"iri\" non trovato\n" =
-      ".*\"(.*)\" non trovato.*"
+      ".*\"(.*)\" non trovato.*",
+    "Error in library(dplir) :" = 
+      "Error in library\\(\"(.*)\"\\) :.*",
+    "Error in library(dplir) :" = 
+      "Error in library\\('(.*)'\\) :.*",
+    "Error in library(dplir) :" = 
+      "Error in library\\((.*)\\) :.*"
   )
   
   

@@ -4,7 +4,7 @@ Title: The Error Helper
 Version: 0.1.2
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-Description: Automatically correct errors and typos you can make.
+Description: Automatically suggest errors and typos corrections.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
