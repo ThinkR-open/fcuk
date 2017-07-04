@@ -47,7 +47,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
   if (!is.na(asked_objet)) {
     # message(gettext("You ask :"), deparse(asked_objet), "\n")
     cat(
-      gettext("Maybe you mean :"),
+      gettext("Did you mean :"),
       paste(
         erreur_correction_propostion(as.character(asked_objet)[1],n=n),
         collapse = gettext(" or ")
