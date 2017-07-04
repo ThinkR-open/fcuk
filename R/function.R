@@ -67,14 +67,17 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 #' catch_error()
 #' catch_error("Error: object 'iri' not found\n")
 #' catch_error("Error: object 'view' not found\n")
+#' 
+#' 
+
+
+
+
 catch_error <- function(sentence = geterrmessage()) {
-  a1 <- sub(".*'(.*)' not found.*", "\\1", sentence)
-  a2 <- sub(".*'(.*)' introuvable.*", "\\1", sentence)
-  a3 <- sub(".*could not find function \"(.*)\"\n", "\\1", sentence)
-  a4 <- sub(".*impossible de trouver la fonction \"(.*)\"\n", "\\1", sentence)
-  
-  res <- c(a1, a2,a3,a4)
-  res[res != sentence][1]
+  regex_rules() %>% 
+    map_chr(~sub(.x,"\\1",sentence)) %>%
+     unname() %>% 
+    .[. != sentence]
 }
 
 #' Init error tracker
@@ -108,3 +111,57 @@ init_error_tracker <- function(){
 remove_error_tracker <- function() {
   options("error" = getOption("old_error"))
 }
+
+
+regex_rules <- function(){
+  
+  res <- c(
+    "Error in sl() : \"sl\" fonksiyonu bulunamadi\n" = 
+      ".*\"(.*)\" fonksiyonu bulunamadi\n",
+    "Error in sl() : could not find function \"sl\"\n" =
+      ".*could not find function \"(.*)\"\n",
+    "Error in sl() : fann ikkje funksjonen «sl»\n" =
+      ".*fann ikkje funksjonen «(.*)»\n",
+    "Error in sl() : impossible de trouver la fonction \"sl\"\n" =
+      ".*impossible de trouver la fonction \"(.*)\"\n",
+    "Error in sl() : konnte Funktion \"sl\" nicht finden\n" = 
+      ".*konnte Funktion \"(.*)\" nicht finden\n",
+    "Error in sl() : não foi possível encontrar a função \"sl\"\n" = 
+      ".*não foi possível encontrar a função \"(.*)\"\n",
+    "Error in sl() : nie udalo sie znalezc funkcji 'sl'\n" =
+      ".*nie udalo sie znalezc funkcji '(.*)'\n",
+    "Error in sl() : no se pudo encontrar la función \"sl\"\n" =
+      ".*no se pudo encontrar la función \"(.*)\"\n",
+    "Error in sl() : non trovo la funzione \"sl\"\n" =
+      ".*non trovo la funzione \"(.*)\"\n",
+    "Error in try(iri) : 'iri' nesnesi bulunamadi\n" = 
+      ".*'(.*)' nesnesi bulunamadi.*",
+    "Error in try(iri) : fann ikkje objektet «iri»\n" = 
+      ".*fann ikkje objektet «(.*)».*",
+    "Error in try(iri) : nie znaleziono obiektu 'iri'\n" =
+      ".*nie znaleziono obiektu '(.*)'.*",
+    "Error in try(iri) : object 'iri' not found\n" =
+      ".*'(.*)' not found.*",
+    "Error in try(iri) : object ‘iri’ not found\n" =
+      ".*‘(.*)’ not found.*",
+    "Error in try(iri) : objekt 'iri' blev ikke fundet\n" =
+      ".*'(.*)' blev ikke fundet.*",
+    "Error in try(iri) : Objekt 'iri' nicht gefunden\n" = 
+      ".*'(.*)' nicht gefunden.*",
+    "Error in try(iri) : objet 'iri' introuvable\n" =
+      ".*'(.*)' introuvable.*",
+    "Error in try(iri) : objeto 'iri' não encontrado\n" = 
+      ".*'(.*)' não encontrado.*",
+    "Error in try(iri) : objeto 'iri' no encontrado\n" = 
+      ".*'(.*)' no encontrado.*",
+    "Error in try(iri) : oggetto \"iri\" non trovato\n" =
+      ".*\"(.*)\" non trovato.*"
+  )
+  
+  
+  
+  
+  res
+}
+
+

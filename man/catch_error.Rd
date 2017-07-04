@@ -16,4 +16,6 @@ Capture and parse the last error
 catch_error()
 catch_error("Error: object 'iri' not found\\n")
 catch_error("Error: object 'view' not found\\n")
+
+
 }
