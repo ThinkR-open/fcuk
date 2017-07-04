@@ -73,7 +73,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 catch_error <- function(sentence = geterrmessage()) {
   regex_rules() %>% 
     map_chr(~sub(.x,"\\1",sentence)) %>%
-     unname() %>% 
+    unname() %>% 
     .[. != sentence]
 }
 
@@ -89,12 +89,12 @@ catch_error <- function(sentence = geterrmessage()) {
 init_error_tracker <- function(){
   
   options("old_error" = getOption("error"))
-    options( error = function(...){ 
-       fcuk::error_analysis()
-      # .rs.breakOnError(TRUE)
-      
-      }  )
-  }
+  options( error = function(...){ 
+    fcuk::error_analysis()
+    # .rs.breakOnError(TRUE)
+    
+  }  )
+}
 
 
 
@@ -117,8 +117,8 @@ regex_rules <- function(){
       ".*\"(.*)\" fonksiyonu bulunamadi\n",
     "Error in sl() : could not find function \"sl\"\n" =
       ".*could not find function \"(.*)\"\n",
-    "Error in sl() : fann ikkje funksjonen «sl»\n" =
-      ".*fann ikkje funksjonen «(.*)»\n",
+    "Error in sl() : fann ikkje funksjonen \u00ABsl\u00BB\n" =
+      ".*fann ikkje funksjonen \u00AB(.*)\u00BB\n",
     "Error in sl() : impossible de trouver la fonction \"sl\"\n" =
       ".*impossible de trouver la fonction \"(.*)\"\n",
     "Error in sl() : konnte Funktion \"sl\" nicht finden\n" = 
@@ -133,14 +133,14 @@ regex_rules <- function(){
       ".*non trovo la funzione \"(.*)\"\n",
     "Error in try(iri) : 'iri' nesnesi bulunamadi\n" = 
       ".*'(.*)' nesnesi bulunamadi.*",
-    "Error in try(iri) : fann ikkje objektet «iri»\n" = 
-      ".*fann ikkje objektet «(.*)».*",
+    "Error in try(iri) : fann ikkje objektet \u00ABiri\u00BB\n" = 
+      ".*fann ikkje objektet \u00AB(.*)\u00BB.*",
     "Error in try(iri) : nie znaleziono obiektu 'iri'\n" =
       ".*nie znaleziono obiektu '(.*)'.*",
     "Error in try(iri) : object 'iri' not found\n" =
       ".*'(.*)' not found.*",
-    "Error in try(iri) : object ‘iri’ not found\n" =
-      ".*‘(.*)’ not found.*",
+    "Error in try(iri) : object \u0091iri\u0092 not found\n" =
+      ".*\u0091(.*)\u0092 not found.*",
     "Error in try(iri) : objekt 'iri' blev ikke fundet\n" =
       ".*'(.*)' blev ikke fundet.*",
     "Error in try(iri) : Objekt 'iri' nicht gefunden\n" = 

@@ -6,3 +6,5 @@
 .onDetach <- function(libname) {
   fcuk::remove_error_tracker()
 }
+
+globalVariables(".")
