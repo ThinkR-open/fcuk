@@ -67,8 +67,11 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 #' catch_error("Error: object 'view' not found\n")
 catch_error <- function(sentence = geterrmessage()) {
   a1 <- sub(".*'(.*)' not found.*", "\\1", sentence)
-  a2 <- sub(".*could not find function \"(.*)\"\n", "\\1", sentence)
-  res <- c(a1, a2)
+  a2 <- sub(".*'(.*)' introuvable.*", "\\1", sentence)
+  a3 <- sub(".*could not find function \"(.*)\"\n", "\\1", sentence)
+  a4 <- sub(".*impossible de trouver la fonction \"(.*)\"\n", "\\1", sentence)
+  
+  res <- c(a1, a2,a3,a4)
   res[res != sentence][1]
 }
 
@@ -85,7 +88,7 @@ init_error_tracker <- function(){
   
   options("old_error" = getOption("error"))
     options( error = function(...){ 
-       error_analysis()
+       fcuk::error_analysis()
       # .rs.breakOnError(TRUE)
       
       }  )
