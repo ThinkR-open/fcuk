@@ -2,8 +2,8 @@
 
 export(add_fcuk_to_rprofile)
 export(catch_error)
-export(erreur_correction_propostion)
 export(error_analysis)
+export(error_correction_propostion)
 export(get_all_objets_from_r)
 export(init_error_tracker)
 export(remove_error_tracker)
