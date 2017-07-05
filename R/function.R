@@ -73,7 +73,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
 catch_error <- function(sentence = geterrmessage()) {
   regex_rules()$regex %>% 
     map_chr(~sub(.x,"\\1",sentence)) %>%
-    unname() %>% 
+    # unname() %>% 
     .[. != sentence]
 }
 
@@ -110,6 +110,9 @@ remove_error_tracker <- function() {
 }
 
 
+
+#' @noRd
+#' @importFrom tibble tribble
 regex_rules <- function(){
   res <- tribble( ~error,~regex,
            "Error in sl() : \"sl\" fonksiyonu bulunamadi\n" ,".*\"(.*)\" fonksiyonu bulunamadi\n",

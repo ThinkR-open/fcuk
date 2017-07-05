@@ -11,5 +11,6 @@ LazyData: true
 RoxygenNote: 6.0.1
 Imports: stringdist,
     purrr,
-    magrittr
+    magrittr,
+    tibble
 Suggests: testthat
