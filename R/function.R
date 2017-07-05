@@ -48,7 +48,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
     # message(gettext("You ask :"), deparse(asked_objet), "\n")
     cat(
       gettext("Did you mean :"),
-      paste(
+      out <- paste(
         erreur_correction_propostion(as.character(asked_objet)[1],n=n),
         collapse = gettext(" or ")
       )
@@ -56,7 +56,8 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
       "?\n"
     )
   }
-}
+invisible(out)
+  }
 
 
 #' Capture and parse the last error

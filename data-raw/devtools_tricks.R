@@ -8,4 +8,8 @@ devtools::build_vignettes()
 library(bookdown)
 bookdown::render_book("plop")
 devtools::use_test("regex")
+devtools::use_test("get_all_objets_from_r")
+devtools::use_test("erreur_correction_propostion")
+devtools::use_test("error_analysis")
+devtools::use_test("catch_error")
 
