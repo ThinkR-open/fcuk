@@ -1,6 +1,6 @@
 #' fcuk
 #' 
-#' Automatically suggest errors and typos corrections.
+#' Automatically suggests a correction when a typo occurs.
 #' 
 #' @name fcuk-package
 #' @aliases fcuk-package fcuk

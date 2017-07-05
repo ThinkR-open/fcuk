@@ -1,7 +1,8 @@
-#' Extract all loaded objects names from R environments 
+#' Extract the name of all objects loaded in the R environments 
 #'
-#' fetch all R loaded objects names (functions, values, data...)
+#' Fetch the name of all objects loaded in the environments (functions, values, data...)
 #' @param ... not used
+#' @return a list with the names of all objects contained in the environments
 #' @export
 #' @importFrom purrr map flatten_chr
 #' @importFrom magrittr %>% 
@@ -13,18 +14,20 @@ get_all_objets_from_r <- function(...) {
     flatten_chr()
 }
 
-#' Find closest R functions names
+#' Find closest object names 
+#' 
+#' Analyse a typo and suggests the two closest names. 
 #'
-#' @param asked_objet the R object name producing an error
+#' @param asked_objet the R name producing an error
 #' @param method Method for distance calculation. The default is "jaccard", see \link[stringdist]{stringdist-metrics}.
-#' @param n number of names corrections to suggest
-#'
+#' @param n number of corrections to suggest.
+#' @return a character vector with the closest neighbors
 #' @export
 #' @import stringdist
 #' @examples 
-#' erreur_correction_propostion("iri")
+#' error_correction_propostion("iri")
 
-erreur_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
+error_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
   candidats <- get_all_objets_from_r()
   candidats[order(stringdist(tolower(asked_objet), tolower(candidats), method = method))][seq_len(n)]
 }
@@ -34,8 +37,8 @@ erreur_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
 
 #' Error Analysis
 #'
-#' @param asked_objet the R object name producing an error
-#' @param n number of corrections to suggest
+#' @param asked_objet the name to analyse
+#' @param n number of names to suggest 
 #'
 #' @export
 #' @examples 
@@ -49,7 +52,7 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
     cat(
       gettext("Did you mean :"),
       out <- paste(
-        erreur_correction_propostion(as.character(asked_objet)[1],n=n),
+        error_correction_propostion(as.character(asked_objet)[1],n=n),
         collapse = gettext(" or ")
       )
       ,
@@ -60,7 +63,7 @@ invisible(out)
   }
 
 
-#' Capture and parse the last error
+#' Capture and parse an error message.
 #'
 #' @param sentence an error message to parse
 #' @importFrom purrr map_chr
@@ -80,7 +83,8 @@ catch_error <- function(sentence = geterrmessage()) {
 
 #' Init error tracker
 #' 
-#' each error message will be analysed
+#' After lauching this function, every error message will be analysed.
+#' This function is called when loading the package. 
 #'
 #' @export
 #' @examples 
@@ -100,6 +104,8 @@ init_error_tracker <- function(){
 
 
 #' Remove error tracker
+#' 
+#' After lauching this function, the errors will no longer be analysed.
 #'
 #' @export
 #' @examples 

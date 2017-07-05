@@ -1,4 +1,8 @@
-#' add library(fcuk) in the .Rprofile file
+#' Add library(fcuk) to the .Rprofile file
+#' 
+#' After calling this function, fcuk will be launched everytime you launch
+#' your current R project.
+#' 
 #' @export
 #' @examples
 #' fcuk::add_fcuk_to_rprofile()

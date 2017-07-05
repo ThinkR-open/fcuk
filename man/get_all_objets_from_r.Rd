@@ -2,15 +2,18 @@
 % Please edit documentation in R/function.R
 \name{get_all_objets_from_r}
 \alias{get_all_objets_from_r}
-\title{Extract all loaded objects names from R environments}
+\title{Extract the name of all objects loaded in the R environments}
 \usage{
 get_all_objets_from_r(...)
 }
 \arguments{
 \item{...}{not used}
 }
+\value{
+a list with the names of all objects contained in the environments
+}
 \description{
-fetch all R loaded objects names (functions, values, data...)
+Fetch the name of all objects loaded in the environments (functions, values, data...)
 }
 \examples{
 get_all_objets_from_r()

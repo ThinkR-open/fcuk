@@ -7,7 +7,7 @@
 remove_error_tracker()
 }
 \description{
-Remove error tracker
+After lauching this function, the errors will no longer be analysed.
 }
 \examples{
 getOption("error")

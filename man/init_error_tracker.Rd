@@ -7,7 +7,8 @@
 init_error_tracker()
 }
 \description{
-each error message will be analysed
+After lauching this function, every error message will be analysed.
+This function is called when loading the package.
 }
 \examples{
 getOption("error")

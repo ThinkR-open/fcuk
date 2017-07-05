@@ -2,12 +2,13 @@
 % Please edit documentation in R/add_to_rprofile.R
 \name{add_fcuk_to_rprofile}
 \alias{add_fcuk_to_rprofile}
-\title{add library(fcuk) in the .Rprofile file}
+\title{Add library(fcuk) to the .Rprofile file}
 \usage{
 add_fcuk_to_rprofile()
 }
 \description{
-add library(fcuk) in the .Rprofile file
+After calling this function, fcuk will be launched everytime you launch
+your current R project.
 }
 \examples{
 fcuk::add_fcuk_to_rprofile()
