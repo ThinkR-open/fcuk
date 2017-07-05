@@ -1,16 +1,16 @@
 #' Extract the name of all objects loaded in the R environments 
 #'
 #' Fetch the name of all objects loaded in the environments (functions, values, data...)
-#' @param ... not used
+#'
 #' @return a list with the names of all objects contained in the environments
 #' @export
 #' @importFrom purrr map flatten_chr
 #' @importFrom magrittr %>% 
 #' @examples
 #' get_all_objets_from_r()
-get_all_objets_from_r <- function(...) {
+get_all_objets_from_r <- function() {
   search() %>% 
-    map(~ls(.x,all.names = TRUE)) %>% 
+    map(ls,all.names = TRUE) %>% 
     flatten_chr()
 }
 
