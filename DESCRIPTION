@@ -20,3 +20,4 @@ Suggests: testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+ByteCompile: true
