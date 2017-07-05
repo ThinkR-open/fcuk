@@ -9,7 +9,7 @@
 #' get_all_objets_from_r()
 get_all_objets_from_r <- function(...) {
   search() %>% 
-    map(~ls(.x)) %>% 
+    map(~ls(.x,all.names = TRUE)) %>% 
     flatten_chr()
 }
 
