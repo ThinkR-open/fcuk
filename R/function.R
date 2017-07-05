@@ -11,7 +11,7 @@
 get_all_objets_from_r <- function() {
   search() %>% 
     map(ls,all.names = TRUE) %>% 
-    flatten_chr()
+    flatten_chr() %>% c(installed.packages() %>% rownames())
 }
 
 #' Find closest object names 
