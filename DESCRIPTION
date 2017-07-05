@@ -12,6 +12,6 @@ RoxygenNote: 6.0.1.9000
 Imports: stringdist,
     purrr,
     magrittr,
-    ask
-Remotes:
-    gaborcsardi/ask
+    ask, 
+    tibble
+Suggests: testthat
