@@ -1,3 +1,14 @@
+---
+title: "Introduction to fcuk"
+author: "Vincent Guyader"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to fcuk}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
 # fcuk
 
 A package designed to help people with clumsy fingers.
@@ -13,7 +24,7 @@ devtools::install_github("ThinkRstat/fcuk")
 
 After launching this package, every error will be analysed. Each time a typo occurs, a correction suggestion will be made under the default error message. 
 
-```{r}
+```{r eval=FALSE}
 library(fcuk)
 
 # Examples 

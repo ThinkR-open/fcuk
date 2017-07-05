@@ -1,16 +1,22 @@
 Package: fcuk
 Type: Package
-Title: The Error Helper
+Title: The Ultimate Helper for Clumsy Fingers
+Date: 2017-07-05
 Version: 0.1.2
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-Description: Automatically suggest errors and typos corrections.
+BugReports: https://github.com/ThinkRstat/fcuk/issues
+URL: https://github.com/ThinkRstat/fcuk
+Description: Automatically suggests a correction when a typo occurs.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 Imports: stringdist,
     purrr,
     magrittr,
     tibble
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
