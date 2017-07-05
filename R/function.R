@@ -9,7 +9,7 @@
 #' get_all_objets_from_r()
 get_all_objets_from_r <- function(...) {
   search() %>% 
-    purrr::map(~ls(.x)) %>% 
+    map(ls) %>% 
     flatten_chr()
 }
 
@@ -36,25 +36,33 @@ erreur_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
 #'
 #' @param asked_objet the R object name producing an error
 #' @param n number of corrections to suggest
-#'
+#' 
+#' @importFrom ask ask
 #' @export
 #' @examples 
 #' fcuk::error_analysis() #last error is analysed
 #' fcuk::error_analysis("view")
 #' fcuk::error_analysis("iri")
 error_analysis <- function(asked_objet = catch_error(),n=2) {
-
-    if (length(asked_objet)>0 && !is.na(asked_objet)) {
-    # message(gettext("You ask :"), deparse(asked_objet), "\n")
-    cat(
-      gettext("Did you mean :"),
-      paste(
-        erreur_correction_propostion(as.character(asked_objet)[1],n=n),
-        collapse = gettext(" or ")
-      )
-      ,
-      "?\n"
-    )
+  if (length(asked_objet)>0 && !is.na(asked_objet)) {
+    choices <- erreur_correction_propostion(as.character(asked_objet)[1],n=n)
+      
+    res <- ask( 
+      name = input( sprintf( "What did you mean ? Perhaps %s ", paste( choices, collapse = " or ") ) )
+    )  
+    message( "ok I'll remember it")
+    
+    # try to get the object 
+    tryCatch({
+      
+      obj <- get(res$name)
+      assign( asked_objet, obj, pos = "fcuk_shims" )
+      
+    }, error = function(e){
+      message( "I did not find anything called ", res$name )
+    })
+    
+    
   }
 }
 
