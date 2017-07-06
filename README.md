@@ -2,6 +2,11 @@
 
 A package designed to help people with clumsy fingers.
 
+
+![](https://media.giphy.com/media/l0Iy8JGxnl5rE1Z96/giphy.gif)
+
+
+
 ## Installation of `fcuk`
 
 ```R
