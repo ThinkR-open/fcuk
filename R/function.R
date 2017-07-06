@@ -45,19 +45,25 @@ error_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
 #' fcuk::error_analysis() #last error is analysed
 #' fcuk::error_analysis("view")
 #' fcuk::error_analysis("iri")
-error_analysis <- function(asked_objet = catch_error(),n=2) {
-
+error_analysis <- function(error = geterrmessage(),n=2) {
+    asked_objet <- catch_error(error)
+    orig_call <- extract_call(error, asked_objet)
     if (length(asked_objet)>0 && !is.na(asked_objet)) {
     # message(gettext("You ask :"), deparse(asked_objet), "\n")
+    suggestions <- error_correction_propostion(as.character(asked_objet)[1],n=n)
     cat(
       gettext("Did you mean :"),
       out <- paste(
-        error_correction_propostion(as.character(asked_objet)[1],n=n),
+        suggestions,
         collapse = gettext(" or ")
       )
       ,
       "?\n"
     )
+    choices <- map_chr(suggestions, ~sub(pattern = asked_objet, x = orig_call, replacement = .))
+    chosen <- menu(choices = choices)
+    cat(choices[chosen])
+    eval(parse(text=choices[chosen]),envir = .GlobalEnv)
   }
 invisible(out)
   }
@@ -75,7 +81,8 @@ invisible(out)
 #' 
 #' 
 catch_error <- function(sentence = geterrmessage()) {
-  regex_rules()$regex %>% 
+  rule_matches <- 
+    regex_rules()$regex %>% 
     map_chr(~sub(.x,"\\1",sentence)) %>%
     # unname() %>% 
     .[. != sentence]
@@ -151,4 +158,15 @@ regex_rules <- function(){
   res
 }
 
+extract_call <- function(error, asked_object){
+  call_matches <- regexec(pattern ="(?<=Error\\sin\\s).*(?=\\s:.*)", text = error , perl = TRUE)
+  call_value <- regmatches(error, call_matches)[[1]]
+  if(length(call_value) > 0 ){
+    #It was a function call type mistake
+    call_value
+  }else{
+    #it was a naked variable name. So just return that.
+    asked_object
+  }
+}
 
