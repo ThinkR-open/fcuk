@@ -81,7 +81,6 @@ invisible(out)
 #' 
 #' 
 catch_error <- function(sentence = geterrmessage()) {
-  rule_matches <- 
     regex_rules()$regex %>% 
     map_chr(~sub(.x,"\\1",sentence)) %>%
     # unname() %>% 
