@@ -62,7 +62,7 @@ error_analysis <- function(error = geterrmessage(),n=2) {
     )
     choices <- map_chr(suggestions, ~sub(pattern = asked_objet, x = orig_call, replacement = .))
     chosen <- menu(choices = choices)
-    cat(choices[chosen])
+    cat(paste0(choices[chosen],"\n"))
     eval(parse(text=choices[chosen]),envir = .GlobalEnv)
   }
 invisible(out)
