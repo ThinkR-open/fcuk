@@ -4,10 +4,7 @@
 \alias{get_all_objets_from_r}
 \title{Extract the name of all objects loaded in the R environments}
 \usage{
-get_all_objets_from_r(...)
-}
-\arguments{
-\item{...}{not used}
+get_all_objets_from_r()
 }
 \value{
 a list with the names of all objects contained in the environments

@@ -5,6 +5,7 @@
 #' @return a list with the names of all objects contained in the environments
 #' @export
 #' @importFrom purrr map flatten_chr
+#' @importFrom utils installed.packages
 #' @importFrom magrittr %>% 
 #' @examples
 #' get_all_objets_from_r()
@@ -58,8 +59,8 @@ error_analysis <- function(asked_objet = catch_error(),n=2) {
       ,
       "?\n"
     )
-  }
 invisible(out)
+}
   }
 
 
