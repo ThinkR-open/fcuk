@@ -9,6 +9,14 @@ A package designed to help people with clumsy fingers.
 
 ## Installation of `fcuk`
 
+### From CRAN
+```R
+
+install.packages("fcuk")
+```
+
+
+### From github
 ```R
 if (!require(devtools)){install.packages("devtools")}
 devtools::install_github("ThinkRstat/fcuk")
