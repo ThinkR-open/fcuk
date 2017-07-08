@@ -1,3 +1,6 @@
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/fcuk)](https://cran.r-project.org/package=fcuk)
+[![](http://cranlogs.r-pkg.org/badges/fcuk)](https://cran.r-project.org/package=fcuk)
+
 # fcuk
 
 A package designed to help people with clumsy fingers.
@@ -11,6 +14,7 @@ A package designed to help people with clumsy fingers.
 
 ### From CRAN
 ```R
+
 install.packages("fcuk")
 ```
 
