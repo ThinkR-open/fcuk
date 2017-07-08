@@ -26,10 +26,14 @@ init_rerun <- function(...){
 #' @examples
 `+.fcuk` <- function(x, y){  
   
-message(x)
-message(y)
-rstudioapi::sendToConsole("voici_une_instruction_a_lancer",execute = FALSE)
+message("x=",x)
+message("y=",y)
+fcuk <- getOption("fcuk")
+message("fcuk"=fcuk)
+message(.Last.value)
+# browser()
+rstudioapi::sendToConsole("ls()",execute = FALSE)
 
-  
+  invisible("")
   }
 
