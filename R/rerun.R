@@ -8,19 +8,28 @@
 #' @examples
 init_rerun <- function(...){
   dots <- list(...)
-  .fcuk <<- structure(dots, class = "fcuk")
+  options(fcuk=dots)
 }
+
+#' @export
+. <- structure("", class= "fcuk")
 
 
 #' Title
 #'
 #' @param x 
-#' @param ... 
+#' @param y 
 #'
 #' @return
 #' @export
-#'
+#' @importFrom rstudioapi sendToConsole
 #' @examples
-print.fcuk <- function(x,...){
-  rstudioapi::sendToConsole("voici_une_instruction_a_lancer",execute = FALSE)
-}
+`+.fcuk` <- function(x, y){  
+  
+message(x)
+message(y)
+rstudioapi::sendToConsole("voici_une_instruction_a_lancer",execute = FALSE)
+
+  
+  }
+

@@ -15,7 +15,8 @@ RoxygenNote: 6.0.1.9000
 Imports: stringdist,
     purrr,
     magrittr,
-    tibble
+    tibble,
+    rstudioapi
 Suggests: testthat,
     knitr,
     rmarkdown
