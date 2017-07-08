@@ -11,7 +11,6 @@ A package designed to help people with clumsy fingers.
 
 ### From CRAN
 ```R
-
 install.packages("fcuk")
 ```
 
