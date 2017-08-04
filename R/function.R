@@ -47,20 +47,21 @@ error_correction_propostion <- function(asked_objet, method = "jaccard",n=2) {
 #' fcuk::error_analysis("view")
 #' fcuk::error_analysis("iri")
 error_analysis <- function(asked_objet = catch_error(),n=2) {
-
+  message("dans error analysis")
+# browser()
     if (length(asked_objet)>0 && !is.na(asked_objet)) {
     # message(gettext("You ask :"), deparse(asked_objet), "\n")
     cat(
       gettext("Did you mean :"),
       out <- paste(
-        error_correction_propostion(as.character(asked_objet)[1],n=n),
+        corr <- error_correction_propostion(as.character(asked_objet)[1],n=n),
         collapse = gettext(" or ")
       )
       ,
       "?\n"
     )
       
-      init_rerun(out,geterrmessage())
+      init_rerun(corr,geterrmessage(),asked_objet)
       
 invisible(out)
 }

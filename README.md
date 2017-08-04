@@ -51,6 +51,22 @@ Did you mean : mean or frame ?
 
 ```
 
+## Rerun with correction
+
+You can use the `.+1` notation to rerun your code with first proposal. 
+or `.+2` to get the second...
+
+
+```{r}
+fcuk::init_error_tracker()
+view(iris)
+.+1 # this put `View(iris)` in your console, ready to launch
+
+
+```
+
+
+
 ## Stop `fcuk`
 
 You can stop `fcuk` at anytime by calling the `remove_error_tracker` function. Start the error tracker again with `init_error_tracker`. 
