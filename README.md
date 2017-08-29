@@ -22,7 +22,7 @@ install.packages("fcuk")
 ### From github
 ```R
 if (!require(devtools)){install.packages("devtools")}
-devtools::install_github("ThinkRstat/fcuk")
+devtools::install_github("ThinkR-open/fcuk")
 ```
 
 ## Launch and use
