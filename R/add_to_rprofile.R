@@ -1,10 +1,10 @@
 #' Add library(fcuk) to the .Rprofile file
 #' 
-#' After calling this function, fcuk will be launched everytime you launch
-#' your current R project (or any project if you use option `global = TRUE`).
+#' After calling this function, fcuk will be launched everytime you launch your 
+#' current R project (or any project if you use option \code{global = TRUE}).
 #' 
-#' @param global Whether to add it to the global .Rprofile (`TRUE`) or just to 
-#'   the  .Rprofile file of your current project (`FALSE`, the default).
+#' @param global Whether to add it to the global .Rprofile (\code{TRUE}) or just 
+#'   to the .Rprofile file of your current project (\code{FALSE}, the default).
 #' 
 #' @export
 #' @examples
