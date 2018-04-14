@@ -1,24 +1,26 @@
-Package: fcuk
 Type: Package
+Package: fcuk
 Title: The Ultimate Helper for Clumsy Fingers
-Date: 2017-07-05
 Version: 0.1.21
+Date: 2017-07-05
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
-BugReports: https://github.com/ThinkRstat/fcuk/issues
-URL: https://github.com/ThinkRstat/fcuk
 Description: Automatically suggests a correction when a typo occurs.
 License: GPL-3
+URL: https://github.com/ThinkRstat/fcuk
+BugReports: https://github.com/ThinkRstat/fcuk/issues
+Imports: 
+    crayon,
+    magrittr,
+    purrr,
+    stringdist,
+    tibble
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+ByteCompile: true
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1.9000
-Imports: stringdist,
-    purrr,
-    magrittr,
-    tibble,
-    crayon
-Suggests: testthat,
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
-ByteCompile: true
