@@ -1,11 +1,3 @@
-#' Title
-#'
-#' @param ... 
-#'
-#' @return
-#' @export
-#'
-#' @examples
 init_rerun <- function(...){
   dots <- list(...)
   options(fcuk=dots)
@@ -23,14 +15,28 @@ init_rerun <- function(...){
 #' @return
 #' @export
 #' @importFrom rstudioapi sendToConsole
+#' @importFrom crayon white italic
 #' @examples
+#' /dontrun{
+#' view(iris)# error
+#' .+1 # return View(iris)
+#' 
+#' }
+#' 
+#' 
 `+.fcuk` <- function(x, y){  
   
 # message("x=",x)
 # message("y=",y)
-# browser()
+browser()
 # print(get_last(y))
-rstudioapi::sendToConsole(get_last(y),execute = FALSE)
+last <- get_last(y)  
+  
+if (!is.na(last)){
+rstudioapi::sendToConsole(last,execute = FALSE)
+}else{
+  cat(crayon::white$italic("No correction available"))
+}
 # rstudioapi::sendToConsole("ls()",execute = TRUE)
   cat("")
   blank<-""
