@@ -7,10 +7,10 @@ init_rerun <- function(...){
 . <- structure("", class= "fcuk")
 
 
-#' Title
+#' Rerun with correcyion
 #'
-#' @param x 
-#' @param y 
+#' @param x blank object of class fcuk
+#' @param y an integer corresponding to the position of the proposal to be reused 
 #'
 #' @return
 #' @export
@@ -28,7 +28,7 @@ init_rerun <- function(...){
   
 # message("x=",x)
 # message("y=",y)
-browser()
+# browser()
 # print(get_last(y))
 last <- get_last(y)  
   
