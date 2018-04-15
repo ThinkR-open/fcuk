@@ -18,7 +18,8 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    covr
 VignetteBuilder: knitr
 ByteCompile: true
 Encoding: UTF-8

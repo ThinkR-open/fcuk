@@ -1,6 +1,7 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/fcuk)](https://cran.r-project.org/package=fcuk)
 [![](http://cranlogs.r-pkg.org/badges/fcuk)](https://cran.r-project.org/package=fcuk)
 [![Travis build status](https://travis-ci.org/ThinkR-open/fcuk.svg?branch=master)](https://travis-ci.org/ThinkR-open/fcuk)
+[![Coverage status](https://codecov.io/gh/ThinkR-open/fcuk/branch/master/graph/badge.svg)](https://codecov.io/github/ThinkR-open/fcuk?branch=master)
 
 # fcuk
 
