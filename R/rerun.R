@@ -12,12 +12,11 @@ init_rerun <- function(...){
 #' @param x blank object of class fcuk
 #' @param y an integer corresponding to the position of the proposal to be reused 
 #'
-#' @return
 #' @export
 #' @importFrom rstudioapi sendToConsole
 #' @importFrom crayon white italic
 #' @examples
-#' /dontrun{
+#' \dontrun{
 #' view(iris)# error
 #' .+1 # return View(iris)
 #' 
@@ -47,9 +46,8 @@ rstudioapi::sendToConsole(last,execute = FALSE)
 
 #' return corrected instruction
 #'
-#' @param n number of correction
+#' @param n postion of the correction
 #'
-#' @return
 #' @export
 #' @examples
 #' get_last()

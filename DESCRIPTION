@@ -9,13 +9,14 @@ Description: Automatically suggests a correction when a typo occurs.
 License: GPL-3
 URL: https://github.com/ThinkRstat/fcuk
 BugReports: https://github.com/ThinkRstat/fcuk/issues
-Imports: 
+Imports:
     crayon,
     magrittr,
     purrr,
     stringdist,
-    tibble
-Suggests: 
+    tibble,
+    rstudioapi
+Suggests:
     knitr,
     rmarkdown,
     testthat,
