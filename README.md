@@ -52,6 +52,21 @@ Did you mean : mean or frame ?
 
 ```
 
+You can accept `fcuk` correction proposal by using this notation : `.+1` This allows you to rerun the last line by accepting the first correction proposal.
+In fact `.+n` will rerun the nth correction proposal.
+
+```{r}
+library(fcuk)
+
+# Examples 
+sl()
+> Error in sl() : impossible de trouver la fonction "sl"
+Did you mean : ls or nls ?
+> .+1
+> ls()
+
+```
+
 ## Stop `fcuk`
 
 You can stop `fcuk` at anytime by calling the `remove_error_tracker` function. Start the error tracker again with `init_error_tracker`. 
