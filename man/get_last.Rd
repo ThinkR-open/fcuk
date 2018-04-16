@@ -7,7 +7,7 @@
 get_last(n = 1)
 }
 \arguments{
-\item{n}{number of correction}
+\item{n}{postion of the correction}
 }
 \description{
 return corrected instruction

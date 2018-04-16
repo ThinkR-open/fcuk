@@ -4,7 +4,7 @@
 \alias{add_fcuk_to_rprofile}
 \title{Add library(fcuk) to the .Rprofile file}
 \usage{
-add_fcuk_to_rprofile(global = FALSE)
+add_fcuk_to_rprofile(global = TRUE)
 }
 \arguments{
 \item{global}{Whether to add it to the global .Rprofile (\code{TRUE}) or just 
