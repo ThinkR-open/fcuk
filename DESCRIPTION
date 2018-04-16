@@ -15,7 +15,8 @@ Imports:
     purrr,
     stringdist,
     tibble,
-    rstudioapi
+    rstudioapi,
+    clisymbols
 Suggests:
     knitr,
     rmarkdown,
