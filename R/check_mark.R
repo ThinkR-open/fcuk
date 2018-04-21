@@ -11,3 +11,6 @@ bullet <- function(lines, bullet) {
 done <- function(...) {
   bullet(paste0(...), bullet = crayon::green(clisymbols::symbol$tick))
 }
+enod <- function(...) {
+  bullet(paste0(...), bullet = crayon::red(clisymbols::symbol$warning))
+}

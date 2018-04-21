@@ -1,7 +1,7 @@
 Type: Package
 Package: fcuk
 Title: The Ultimate Helper for Clumsy Fingers
-Version: 0.1.3
+Version: 0.1.3.1
 Date: 2017-07-05
 Author: Vincent Guyader
 Maintainer: Vincent Guyader <vincent@thinkr.fr>
@@ -16,7 +16,8 @@ Imports:
     stringdist,
     tibble,
     rstudioapi,
-    clisymbols
+    clisymbols,
+    stringr
 Suggests:
     knitr,
     rmarkdown,
