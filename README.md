@@ -96,3 +96,6 @@ You'll typically never need to use the functions contained in `fcuk`. You just n
 ## Feedbacks and questions 
 
 Feel free to  report any [issue](https://github.com/ThinkRstat/fcuk/issues) you may have with this package. 
+  
+  
+See full documentation realised using {pkgdown} at <https://thinkr-open.github.io/fcuk/>
