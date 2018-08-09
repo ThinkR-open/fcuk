@@ -3,6 +3,8 @@
 [![Travis build status](https://travis-ci.org/ThinkR-open/fcuk.svg?branch=master)](https://travis-ci.org/ThinkR-open/fcuk)
 [![Coverage status](https://codecov.io/gh/ThinkR-open/fcuk/branch/master/graph/badge.svg)](https://codecov.io/github/ThinkR-open/fcuk?branch=master)
 
+<img src="https://raw.githubusercontent.com/ThinkR-open/fcuk/master/img/fcuk-hex-thinkr.png" width=250px>
+
 # fcuk
 
 A package designed to help people with clumsy fingers.
