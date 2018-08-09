@@ -4,7 +4,7 @@ Title: The Ultimate Helper for Clumsy Fingers
 Version: 0.1.3.1
 Date: 2017-07-05
 Author: Vincent Guyader
-Maintainer: Vincent Guyader <vincent@thinkr.fr>
+Authors@R: c(person('Vincent', 'Guyader', email = 'vincent@thinkr.fr', role = c('cre', 'aut')))
 Description: Automatically suggests a correction when a typo occurs.
 License: GPL-3
 URL: https://github.com/ThinkRstat/fcuk
