@@ -87,11 +87,11 @@ library(fcuk)
 
 It will be more efficient to add this library to your Rprofile. You can use `fcuk::add_fcuk_to_rprofile()` to do so. Then, any time you launch your R project, `fcuk` will be launched at the same time. 
 
-You can also add `fcuk` inside your `Rprofile.site` file. Then you'll have this functionnality inside all your Rstudio projects.
+You can also add `fcuk` inside your `Rprofile.site` file. Then you'll have this functionality inside all your Rstudio projects.
 
 ## fcuk functions
 
-You'll typically never need to use the functions contained in `fcuk`. You just need to launch this library, and `fcuk` will do his job in the background. 
+You'll typically never need to use the functions contained in `fcuk`. You just need to launch this library, and `fcuk` will do its job in the background. 
 
 ## Feedbacks and questions 
 
