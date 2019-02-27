@@ -31,6 +31,8 @@ devtools::install_github("ThinkR-open/fcuk")
 
 ## Launch and use
 
+See full documentation realised using {pkgdown} at <https://thinkr-open.github.io/fcuk/>  
+
 After launching this package, every error will be analysed. Each time a typo occurs, a correction suggestion will be made under the default error message. 
 
 ```{r}
@@ -97,5 +99,6 @@ You'll typically never need to use the functions contained in `fcuk`. You just n
 
 Feel free to  report any [issue](https://github.com/ThinkRstat/fcuk/issues) you may have with this package. 
   
-  
-See full documentation realised using {pkgdown} at <https://thinkr-open.github.io/fcuk/>
+## Code of conduct
+
+Please note that the 'fcuk' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
