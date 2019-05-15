@@ -5,3 +5,6 @@
 ^\.travis\.yml$
 ^codecov\.yml$
 img
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

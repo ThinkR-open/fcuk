@@ -2,12 +2,27 @@
 % Please edit documentation in R/doc_package.R
 \docType{package}
 \name{fcuk-package}
-\alias{fcuk-package}
 \alias{fcuk}
-\title{fcuk}
+\alias{fcuk-package}
+\title{fcuk: The Ultimate Helper for Clumsy Fingers}
 \description{
 Automatically suggests a correction when a typo occurs.
 }
-\author{
-vincent <vincent@thinkr.fr>
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ThinkRstat/fcuk}
+  \item Report bugs at \url{https://github.com/ThinkRstat/fcuk/issues}
 }
+
+}
+\author{
+\strong{Maintainer}: Vincent Guyader \email{vincent@thinkr.fr} (0000-0003-0671-9270)
+
+Other contributors:
+\itemize{
+  \item ThinkR [copyright holder]
+}
+
+}
+\keyword{internal}
