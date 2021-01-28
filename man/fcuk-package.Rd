@@ -11,13 +11,13 @@ Automatically suggests a correction when a typo occurs.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ThinkRstat/fcuk}
-  \item Report bugs at \url{https://github.com/ThinkRstat/fcuk/issues}
+  \item \url{https://github.com/ThinkR-open/fcuk}
+  \item Report bugs at \url{https://github.com/ThinkR-open/fcuk/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Vincent Guyader \email{vincent@thinkr.fr} (0000-0003-0671-9270)
+\strong{Maintainer}: Vincent Guyader \email{vincent@thinkr.fr} (\href{https://orcid.org/0000-0003-0671-9270}{ORCID})
 
 Other contributors:
 \itemize{
