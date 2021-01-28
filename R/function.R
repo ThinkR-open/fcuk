@@ -10,8 +10,10 @@
 #' @examples
 #' get_all_objets_from_r()
 get_all_objets_from_r <- function() {
-  search() %>% 
-    map(ls,all.names = TRUE) %>% 
+  search()[10] %>% 
+    map(ls, all.names = TRUE) %>% 
+    flatten_chr() %>% 
+    map(~{if("data.frame" %in% class(get(.x))){c(.x, names(get(.x)))}else{.x}}) %>% 
     flatten_chr() %>% c(installed.packages() %>% rownames())
 }
 
