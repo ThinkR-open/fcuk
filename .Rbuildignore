@@ -8,3 +8,5 @@ img
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^dev_history\.R$
+^\.github$
