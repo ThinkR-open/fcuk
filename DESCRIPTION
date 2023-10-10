@@ -8,8 +8,8 @@ Authors@R: c(person('Vincent', 'Guyader', email = 'vincent@thinkr.fr', role = c(
   person(given = "ThinkR", role = "cph"))
 Description: Automatically suggests a correction when a typo occurs.
 License: GPL-3
-URL: https://github.com/ThinkRstat/fcuk
-BugReports: https://github.com/ThinkRstat/fcuk/issues
+URL: https://thinkr-open.github.io/fcuk/, https://github.com/ThinkR-open/fcuk
+BugReports: https://github.com/ThinkR-open/fcuk/issues
 Imports:
     crayon,
     magrittr,
