@@ -9,7 +9,9 @@
 #' @importFrom magrittr %>% 
 #' @export
 #' @examples
+#' \dontrun{
 #' fcuk::add_fcuk_to_rprofile()
+#' }
 add_fcuk_to_rprofile <- function(global = TRUE) {
   
   file <- `if`(global, "~/.Rprofile", ".Rprofile")

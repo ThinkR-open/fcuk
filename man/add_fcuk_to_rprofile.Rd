@@ -15,5 +15,7 @@ After calling this function, fcuk will be launched everytime you launch your
 current R project (or any project if you use option \code{global = TRUE}).
 }
 \examples{
+\dontrun{
 fcuk::add_fcuk_to_rprofile()
+}
 }
