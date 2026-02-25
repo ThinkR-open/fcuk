@@ -2,24 +2,24 @@
 % Please edit documentation in R/rerun.R
 \name{+.fcuk}
 \alias{+.fcuk}
-\title{Rerun with correcyion}
+\title{Rerun with correction}
 \usage{
 \method{+}{fcuk}(x, y)
 }
 \arguments{
-\item{x}{blank object of class fcuk}
+\item{x}{Blank object of class fcuk.}
 
-\item{y}{an integer corresponding to the position of the proposal to be reused}
+\item{y}{An integer corresponding to the position of the proposal to be reused.}
+}
+\value{
+Invisibly returns a blank object.
 }
 \description{
-Rerun with correcyion
+Use the `+` operator with the `.` object to apply a correction.
 }
 \examples{
 \dontrun{
-view(iris)# error
-.+1 # return View(iris)
-
+view(iris) # error
+. + 1 # returns View(iris)
 }
-
-
 }

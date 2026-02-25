@@ -1,66 +1,99 @@
-init_rerun <- function(...){
+#' Initialize rerun state
+#'
+#' Store correction information for use with the `.+n` operator.
+#'
+#' @param ... Correction data to store.
+#'
+#' @return Invisibly returns `NULL`.
+#' @noRd
+init_rerun <- function(...) {
   dots <- list(...)
-  options(fcuk=dots)
+  options(fcuk = dots)
+  invisible(NULL)
 }
 
-#' @export
-. <- structure("", class= "fcuk")
 
-
-#' Rerun with correcyion
+#' Placeholder object for rerun operator
 #'
-#' @param x blank object of class fcuk
-#' @param y an integer corresponding to the position of the proposal to be reused 
+#' Use `.+1` or `.+2` to rerun the last command with a suggested correction.
 #'
 #' @export
-#' @importFrom rstudioapi sendToConsole
-#' @importFrom crayon white italic
 #' @examples
 #' \dontrun{
-#' view(iris)# error
-#' .+1 # return View(iris)
-#' 
+#' view(iris) # error
+#' . + 1 # returns View(iris)
 #' }
-#' 
-#' 
-`+.fcuk` <- function(x, y){  
-  
-# message("x=",x)
-# message("y=",y)
-# browser()
-# print(get_last(y))
-last <- get_last(y)  
-  
-if (!is.na(last)){
-rstudioapi::sendToConsole(last,execute = FALSE)
-}else{
-  cat(crayon::white$italic("No correction available"))
-}
-# rstudioapi::sendToConsole("ls()",execute = TRUE)
-  cat("")
-  blank<-""
-  class(blank)<-"blank"
-    invisible(blank)
+. <- structure("", class = "fcuk")
 
+
+#' Rerun with correction
+#'
+#' Use the `+` operator with the `.` object to apply a correction.
+#'
+#' @param x Blank object of class fcuk.
+#' @param y An integer corresponding to the position of the proposal to be reused.
+#'
+#' @return Invisibly returns a blank object.
+#' @export
+#' @method + fcuk
+#' @examples
+#' \dontrun{
+#' view(iris) # error
+#' . + 1 # returns View(iris)
+#' }
+`+.fcuk` <- function(x, y) {
+  last <- get_last(y)
+
+  if (!is.na(last)) {
+    rstudioapi::sendToConsole(last, execute = FALSE)
+  } else {
+    cli::cli_text(cli::col_silver(cli::style_italic("No correction available")))
+  }
+
+  blank <- ""
+  class(blank) <- "blank"
+  invisible(blank)
 }
 
-#' return corrected instruction
+
+#' Return corrected instruction
 #'
-#' @param n postion of the correction
+#' Get the corrected command at position `n`.
 #'
+#' @param n Position of the correction (default: 1).
+#'
+#' @return A character string with the corrected command, or `NA` if unavailable.
 #' @export
 #' @examples
 #' get_last()
-get_last<-function(n=1){
-  message <-   getOption("fcuk")[[2]]
-  correction <-   getOption("fcuk")[[1]]
-  error <-   getOption("fcuk")[[3]]
-  le_call <- sub("Error in (.*) :.*" ,"\\1",message)
-  # le_call %>%  str_replace(pattern = error,replacement = correction)[n]
-  sapply(correction,function(x){gsub(x=le_call,pattern = error,replacement = x)})[n]
+get_last <- function(n = 1) {
+  fcuk_data <- getOption("fcuk")
+
+  if (is.null(fcuk_data) || length(fcuk_data) < 3) {
+    return(NA_character_)
+  }
+
+  message <- fcuk_data[[2]]
+  correction <- fcuk_data[[1]]
+  error <- fcuk_data[[3]]
+
+  le_call <- sub("Error in (.*) :.*", "\\1", message)
+
+  result <- vapply(
+    correction,
+    function(x) gsub(x = le_call, pattern = error, replacement = x),
+    character(1)
+  )
+
+  if (n > length(result) || n < 1) {
+    return(NA_character_)
+  }
+
+  result[n]
 }
 
-#'@export
-print.blank <-function(x,...){
-  cat("")
+
+#' @export
+print.blank <- function(x, ...) {
+  invisible(x)
 }

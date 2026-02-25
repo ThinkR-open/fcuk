@@ -1,7 +1,6 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/fcuk)](https://cran.r-project.org/package=fcuk)
 [![](http://cranlogs.r-pkg.org/badges/fcuk)](https://cran.r-project.org/package=fcuk)
-[![Travis build status](https://travis-ci.org/ThinkR-open/fcuk.svg?branch=master)](https://travis-ci.org/ThinkR-open/fcuk)
-[![Coverage status](https://codecov.io/gh/ThinkR-open/fcuk/branch/master/graph/badge.svg)](https://codecov.io/github/ThinkR-open/fcuk?branch=master)
+[![Coverage status](https://app.codecov.io/github/ThinkR-open/fcuk?branch=master)
 
 <img src="https://raw.githubusercontent.com/ThinkR-open/fcuk/master/img/fcuk-hex-thinkr.png" width=250px>
 
@@ -97,7 +96,7 @@ You'll typically never need to use the functions contained in `fcuk`. You just n
 
 ## Feedbacks and questions 
 
-Feel free to  report any [issue](https://github.com/ThinkRstat/fcuk/issues) you may have with this package. 
+Feel free to  report any [issue]( https://github.com/ThinkR-open/fcuk/issues) you may have with this package. 
   
 ## Code of conduct
 

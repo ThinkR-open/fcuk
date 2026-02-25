@@ -7,18 +7,21 @@
 error_correction_propostion(asked_objet, method = "jaccard", n = 2)
 }
 \arguments{
-\item{asked_objet}{the R name producing an error}
+\item{asked_objet}{The R name producing an error.}
 
-\item{method}{Method for distance calculation. The default is "jaccard", see \link[stringdist]{stringdist-metrics}.}
+\item{method}{Method for distance calculation. The default is "jaccard",
+see [stringdist::stringdist-metrics].}
 
-\item{n}{number of corrections to suggest.}
+\item{n}{Number of corrections to suggest (default: 2).}
 }
 \value{
-a character vector with the closest neighbors
+A character vector with the closest neighbors, or `character(0)` if
+  no valid input is provided.
 }
 \description{
-Analyse a typo and suggests the two closest names.
+Analyse a typo and suggests the closest names.
 }
 \examples{
 error_correction_propostion("iri")
+error_correction_propostion("view")
 }

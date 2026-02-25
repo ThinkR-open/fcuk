@@ -2,10 +2,11 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
-^\.travis\.yml$
 ^codecov\.yml$
 img
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
 ^\.github$
+^LICENSE\.md$
+^dev$

@@ -7,15 +7,19 @@
 error_analysis(asked_objet = catch_error(), n = 2)
 }
 \arguments{
-\item{asked_objet}{the name to analyse}
+\item{asked_objet}{The name to analyse. Defaults to extracting from last error.}
 
-\item{n}{number of names to suggest}
+\item{n}{Number of names to suggest (default: 2).}
+}
+\value{
+Invisibly returns a string with the suggestions, or `NULL` if no
+  error could be parsed.
 }
 \description{
-Error Analysis
+Analyse the last error message and suggest corrections.
 }
 \examples{
-fcuk::error_analysis() #last error is analysed
+fcuk::error_analysis() # last error is analysed
 fcuk::error_analysis("view")
 fcuk::error_analysis("iri")
 }

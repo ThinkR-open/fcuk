@@ -13,4 +13,3 @@ devtools::use_test("get_all_objets_from_r")
 devtools::use_test("error_correction_propostion")
 devtools::use_test("error_analysis")
 devtools::use_test("catch_error")
-

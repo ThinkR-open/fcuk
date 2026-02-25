@@ -7,7 +7,8 @@ bullet <- function(lines, bullet) {
   lines <- paste0(bullet, " ", lines)
   cat_line(lines)
 }
-
+#' @importFrom crayon green red
+#' @importFrom clisymbols symbol
 done <- function(...) {
   bullet(paste0(...), bullet = crayon::green(clisymbols::symbol$tick))
 }

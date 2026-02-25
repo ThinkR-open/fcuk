@@ -2,15 +2,18 @@
 % Please edit documentation in R/rerun.R
 \name{get_last}
 \alias{get_last}
-\title{return corrected instruction}
+\title{Return corrected instruction}
 \usage{
 get_last(n = 1)
 }
 \arguments{
-\item{n}{postion of the correction}
+\item{n}{Position of the correction (default: 1).}
+}
+\value{
+A character string with the corrected command, or `NA` if unavailable.
 }
 \description{
-return corrected instruction
+Get the corrected command at position `n`.
 }
 \examples{
 get_last()

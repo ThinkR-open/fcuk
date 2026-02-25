@@ -1,31 +1,33 @@
 Type: Package
 Package: fcuk
 Title: The Ultimate Helper for Clumsy Fingers
-Version: 0.1.4
-Date: 2017-07-05
-Author: Vincent Guyader
-Authors@R: c(person('Vincent', 'Guyader', email = 'vincent@thinkr.fr', role = c('cre', 'aut'), comment = c(ORCID = "0000-0003-0671-9270")),
-  person(given = "ThinkR", role = "cph"))
+Version: 0.2.0
+Authors@R: c(
+    person("Vincent", "Guyader", , "vincent@thinkr.fr", role = c("cre", "aut"),
+           comment = c(ORCID = "0000-0003-0671-9270")),
+    person("ThinkR", role = "cph")
+  )
 Description: Automatically suggests a correction when a typo occurs.
 License: GPL-3
-URL: https://thinkr-open.github.io/fcuk/, https://github.com/ThinkR-open/fcuk
+URL: https://thinkr-open.github.io/fcuk/,
+    https://github.com/ThinkR-open/fcuk
 BugReports: https://github.com/ThinkR-open/fcuk/issues
+Depends:
+    R (>= 4.1.0)
 Imports:
-    crayon,
-    magrittr,
-    purrr,
-    stringdist,
-    tibble,
-    rstudioapi,
+    cli,
     clisymbols,
-    stringr
+    crayon,
+    rstudioapi,
+    stringdist,
+    utils
 Suggests:
     knitr,
     rmarkdown,
-    testthat,
-    covr,
-    pkgdown
-VignetteBuilder: knitr
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 ByteCompile: true
+Config/testthat/edition: 3
 Encoding: UTF-8
 RoxygenNote: 7.3.3

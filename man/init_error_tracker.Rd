@@ -6,8 +6,11 @@
 \usage{
 init_error_tracker()
 }
+\value{
+Invisibly returns `NULL`.
+}
 \description{
-After lauching this function, every error message will be analysed.
+After launching this function, every error message will be analysed.
 This function is called when loading the package.
 }
 \examples{

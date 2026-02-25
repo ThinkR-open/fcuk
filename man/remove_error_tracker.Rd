@@ -6,8 +6,11 @@
 \usage{
 remove_error_tracker()
 }
+\value{
+Invisibly returns `NULL`.
+}
 \description{
-After lauching this function, the errors will no longer be analysed.
+After launching this function, the errors will no longer be analysed.
 }
 \examples{
 getOption("error")

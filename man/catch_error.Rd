@@ -2,20 +2,22 @@
 % Please edit documentation in R/function.R
 \name{catch_error}
 \alias{catch_error}
-\title{Capture and parse an error message.}
+\title{Capture and parse an error message}
 \usage{
 catch_error(sentence = geterrmessage())
 }
 \arguments{
-\item{sentence}{an error message to parse}
+\item{sentence}{An error message to parse. Defaults to the last error message.}
+}
+\value{
+A character vector with extracted names, or `character(0)` if
+  no match is found.
 }
 \description{
-Capture and parse an error message.
+Extract the object or function name from an error message.
 }
 \examples{
 catch_error()
 catch_error("Error: object 'iri' not found\n")
 catch_error("Error: object 'view' not found\n")
-
-
 }
